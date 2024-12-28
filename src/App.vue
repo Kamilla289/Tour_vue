@@ -1,20 +1,15 @@
-<script setup>
-import HeroView from "@/views/HeroView.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
+<script>
+import FirstView from "@/views/FirstView.vue";
 
 export default {
   components: {
-    HeroView,
-    FooterComponent, // Футер остаётся общим для всех страниц
+    FirstView
   },
 };
 </script>
 
 <template>
-  <div id="wrapper">
-    <router-view />
-    <!-- Динамическое отображение компонентов -->
-    <footer-component />
-    <!-- Футер всегда виден -->
+  <div class="wrapper">
   </div>
+
 </template>
