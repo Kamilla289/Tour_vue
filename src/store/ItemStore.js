@@ -46,7 +46,7 @@ const itemStore = {
     ],
   },
   getters: {
-    getCoffeeHero(state) {
+    getItems(state) {
       return { cards: state.cards };
     },
     getItemById(state) {

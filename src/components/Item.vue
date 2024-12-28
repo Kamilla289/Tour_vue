@@ -11,10 +11,18 @@ export default {
     },
   },
   methods: {
+    toggleTextVisibility() {
+      this.isTextVisible = !this.isTextVisible;
+    },
     onEmmit(id) {
       this.$emit('onNavigate', id);
     }
-  }
+  },
+  data() {
+    return {
+      isTextVisible: false
+    };
+  },
 }
 </script>
 
@@ -23,9 +31,11 @@ export default {
     <div :class="card.classItem">
       <img :src="`/${card.image}`" :alt="card.image">
       <h3 class="">{{ card.title }}</h3>
-      <div class="description">{{ card.text }}
+      <div class="description">{{ isTextVisible ? card.text : card.text.slice(0, 400) }}
         <br>
-        <span>Читать далее ...</span>
+        <span>
+          Читать далее ...
+        </span>
       </div>
     </div>
   </div>
